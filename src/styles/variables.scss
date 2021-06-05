@@ -1,0 +1,22 @@
+@mixin floating-div {
+  -webkit-animation: float 6s ease-in-out infinite;
+  -moz-animation: float 6s ease-in-out infinite;
+  -ms-animation: float 6s ease-in-out infinite;
+  -o-animation: float 6s ease-in-out infinite;
+  animation: float 6s ease-in-out infinite;
+}
+
+@mixin ease {
+  -webkit-transition: .5s ease;
+  -moz-transition: .5s ease;
+  -o-transition: .5s ease;
+  transition: .5s ease;
+}
+
+@mixin pulse {
+  -webkit-animation: pulse 1.5s linear infinite;
+  -moz-animation: pulse 1.5s linear infinite;
+  -ms-animation: pulse 1.5s linear infinite;
+  -o-animation: pulse 1.5s linear infinite;
+  animation: pulse 1.5s linear infinite;
+}
