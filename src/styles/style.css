@@ -112,9 +112,9 @@ input:active {
 }
 
 .navbar-light .navbar-nav .nav-link::before {
+  background-color: #121212;
   content: "";
   position: absolute;
-  background-color: #121212;
   opacity: 1;
   inset: 0px -1px 4px;
   z-index: -1;
@@ -385,12 +385,17 @@ input:active {
   border-radius: .20rem;
 }
 
+.trending .grid-container #currentGif {
+  scroll-margin: 50px;
+}
+
 .load-more-container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   width: 100%;
+  z-index: 999;
 }
 
 .load-more-container button {

@@ -378,6 +378,10 @@ input:active {
         border-radius: .20rem;
       }
     }
+
+    #currentGif {
+      scroll-margin: 50px;
+    }
   }
 
   // END GRID 
@@ -388,6 +392,7 @@ input:active {
   @include flex-center;
   flex-direction: column;
   width: 100%;
+  z-index: 999;
 
   button {
     @include transition-ease;

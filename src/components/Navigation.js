@@ -1,9 +1,9 @@
-import React from 'react'
-import { Link, withRouter } from 'react-router-dom'
-import { Navbar, Nav, NavDropdown, Dropdown } from 'react-bootstrap'
+import React from 'react';
+import { Link, withRouter } from 'react-router-dom';
+import { Navbar, Nav, NavDropdown, Dropdown } from 'react-bootstrap';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEllipsisV } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
 
 const Navigation = () => {
 

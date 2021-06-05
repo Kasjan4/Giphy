@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
-import { Link } from 'react-router-dom'
-import Slide from 'react-reveal/Slide'
-import Fade from 'react-reveal/Fade'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+import Fade from 'react-reveal/Fade';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch, faAngleRight } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 const Home = () => {
 
@@ -13,19 +12,18 @@ const Home = () => {
   const angleRight = <FontAwesomeIcon icon={faAngleRight} size="1x" />
 
   // The gifs return from API stored in this object
-  const [gifs, setGifs] = useState({})
+  const [gifs, setGifs] = useState({});
   // Search term and current input to manage search API call
-  const [searchTerm, setSearchTerm] = useState('')
-  const [searchInput, setSearchInput] = useState('')
+  const [searchTerm, setSearchTerm] = useState('');
+  const [searchInput, setSearchInput] = useState('');
   // Toggle between trending and search, used for API call
-  const [mode, setMode] = useState('trending')
+  const [mode, setMode] = useState('trending');
   // Current pagination index for API call, jumps 21 results each time when handleMoreGifs() is fired
-  const [page, setPage] = useState(0)
+  const [page, setPage] = useState(0);
   // Loader is displayed between API call and response
-  const [loaded, setLoaded] = useState(false)
+  const [loaded, setLoaded] = useState(false);
   // Keep track of the gifs loading state in a boolean array, only display a certain image when it is fully loaded.
-  const [imageLoading, setImageLoading] = useState([])
-
+  const [imageLoading, setImageLoading] = useState([]);
 
   useEffect(() => {
 
@@ -34,47 +32,56 @@ const Home = () => {
 
         .then((resp) => {
           if (page === 0) {
-            setGifs(resp.data)
-            setLoaded(true)
+            setGifs(resp.data);
+            setLoaded(true);
           }
           else if (page > 0) {
-            let updatedGifs = { ...gifs }
-            let newGifs = resp.data.data
-            newGifs.forEach((gif) => updatedGifs.data.push(gif))
-            setGifs(updatedGifs)
-            setLoaded(true)
+            let updatedGifs = { ...gifs };
+            let newGifs = resp.data.data;
+            newGifs.forEach((gif) => updatedGifs.data.push(gif));
+            setGifs(updatedGifs);
+            setLoaded(true);
           }
         })
 
     } catch (e) {
-      console.log(e)
+      console.log(e);
     }
 
   }, [page, searchTerm])
 
   function handleSearch(event) {
-    event.preventDefault()
-    if (searchInput.length < 1) return
-    setLoaded(false)
-    setMode('search')
-    setImageLoading([])
-    setPage(0)
-    setSearchTerm(searchInput)
+    event.preventDefault();
+    if (searchInput.length < 1) return;
+    setLoaded(false);
+    setMode('search');
+    setImageLoading([]);
+    setPage(0);
+    setSearchTerm(searchInput);
   }
 
   // Get 21 more results, useEffect and axios triggered when pagination index is changed
   function handleMoreGifs() {
-    setLoaded(false)
-    setPage(page + 21)
+    setLoaded(false);
+    setPage(page + 21);
+    scrollToMoreGifs();
   }
 
-  // Confirm a certain image is loaded, and then display it by updating the boolean array to true at its index.
+  // Confirm a certain image is loaded, and then display it by updating the boolean array to true at its index
   function loadImage(index) {
-    let updatedIndex = [...imageLoading]
-    updatedIndex[index] = true
-    setImageLoading(updatedIndex)
+    let updatedIndex = [...imageLoading];
+    updatedIndex[index] = true;
+    setImageLoading(updatedIndex);
   }
-  console.log(imageLoading[imageLoading.length - 1])
+
+  // Ensuring new gifs are at the correct viewpoint when the gifs state is updated
+  function scrollToMoreGifs() {
+    setTimeout(() => {
+      document.getElementById('currentGif').scrollIntoView();
+    }, 1000)
+  }
+
+
   return (
     <div className="landing-page" >
 
@@ -118,7 +125,7 @@ const Home = () => {
 
             {gifs.data.map((gif, index) => {
               return <Fade up key={index} spy={imageLoading[index]} distance="40px" delay={index % 2 === 0 ? 100 : 300} ssrReveal={true} duration={550} >
-                <div >
+                <div id={index === gifs.data.length - 21 ? 'currentGif' : null}>
                   <img src={gif.images.downsized.url} style={imageLoading[index] ? { opacity: '1' } : { opacity: '0' }} width={gif.images.downsized.width} alt={gif.title} onLoad={() => loadImage(index)} />
                 </div>
               </Fade>
@@ -131,7 +138,6 @@ const Home = () => {
               <p>No GIFs found for {searchTerm}<br />
               Try searching for Stickers instead?</p>}
           </div>
-
 
         </div> :
 
@@ -147,9 +153,7 @@ const Home = () => {
       </footer>
 
     </div >
-
   )
-
 }
 
 export default Home
