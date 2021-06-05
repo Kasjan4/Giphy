@@ -6,9 +6,9 @@
   font-family: 'Lato', sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+// html {
+//   scroll-behavior: smooth;
+// }
 
 #root {
   @include flex-col;
@@ -380,7 +380,7 @@ input:active {
     }
 
     #currentGif {
-      scroll-margin: 50px;
+      // scroll-margin: 50px;
     }
   }
 

@@ -42,6 +42,11 @@ const Home = () => {
             newGifs.forEach((gif) => updatedGifs.data.push(gif));
             setGifs(updatedGifs);
             setLoaded(true);
+
+            // Ensuring new gifs are at the correct viewpoint when the gifs state is updated
+            setTimeout(() => {
+              smoothScroll('#currentGif', 100)
+            }, 500)
           }
         })
 
@@ -65,11 +70,6 @@ const Home = () => {
   function handleMoreGifs() {
     setLoaded(false);
     setPage(page + 21);
-
-    // Ensuring new gifs are at the correct viewpoint when the gifs state is updated
-    setTimeout(() => {
-      document.getElementById('currentGif').scrollIntoView();
-    }, 1000)
   }
 
   // Confirm a certain image is loaded, and then display it by updating the boolean array to true at its index
@@ -77,6 +77,28 @@ const Home = () => {
     let updatedIndex = [...imageLoading];
     updatedIndex[index] = true;
     setImageLoading(updatedIndex);
+  }
+
+  function smoothScroll(target, duration) {
+    const element = document.querySelector(target);
+    const targetPosition = Math.round(element.getBoundingClientRect().top - 80);
+    const startPosition = Math.round(window.pageYOffset);
+    const distance = targetPosition - startPosition;
+    let startTime = null;
+
+    function animation(currentTime) {
+      if (startTime === null) startTime = currentTime
+      const timeElapsed = currentTime - startTime
+      const run = ease(timeElapsed, startPosition, targetPosition, duration)
+      window.scrollTo(0, run)
+      if (timeElapsed < duration) requestAnimationFrame(animation)
+    };
+
+    function ease(t, b, c, d) {
+      return c * t / d + b;
+    };
+
+    requestAnimationFrame(animation)
   }
 
 

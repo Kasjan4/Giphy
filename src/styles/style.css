@@ -4,10 +4,6 @@
   font-family: 'Lato', sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 #root {
   display: flex;
   flex-direction: column;
@@ -383,10 +379,6 @@ input:active {
 .trending .grid-container div img {
   width: 100%;
   border-radius: .20rem;
-}
-
-.trending .grid-container #currentGif {
-  scroll-margin: 50px;
 }
 
 .load-more-container {
