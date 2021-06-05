@@ -11,14 +11,13 @@ html {
 }
 
 #root {
-  display: flex;
-  flex-direction: column;
+  @include flex-col;
+  @include bg;
   align-items: center;
-  background-color: rgb(18, 18, 18);
 }
 
 body {
-  background-color: rgb(18, 18, 18);
+  @include bg;
 }
 
 h1,
@@ -31,21 +30,22 @@ p,
 span {
   padding: 0;
   margin: 0;
-  color: rgb(255, 255, 255);
+  @include global-font-color;
 }
 
 a {
-  color: rgb(243, 243, 243);
+  @include global-link-color;
   font-weight: 400;
   text-decoration: none;
 
   &:hover {
-    color: rgb(235, 235, 235);
+    @include global-link-color;
     text-decoration: none;
   }
 }
 
 button {
+  @include global-link-color;
   border: none;
 }
 
@@ -66,12 +66,11 @@ input:active {
 }
 
 .navbar-nav {
-  display: flex;
+  @include flex-row;
   background: linear-gradient(to right, rgb(0, 204, 255), rgb(153, 51, 255) 31%, rgb(230, 70, 182) 52%, rgb(255, 249, 170) 77%, rgb(0, 255, 153), rgb(0, 204, 255)) 0% 50% / 200% 50%;
 }
 
 .basic-navbar-nav {
-  color: white;
   width: 100%;
 }
 
@@ -85,10 +84,8 @@ input:active {
 }
 
 .navbar-light .navbar-nav .nav-link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: rgb(255, 255, 255) !important;
+  @include flex-center;
+  color: inherit;
   border-right: 4px solid rgb(18, 18, 18);
   z-index: 2;
   width: 100%;
@@ -116,9 +113,9 @@ input:active {
 
 
 .navbar-light .navbar-nav .nav-link::before {
+  @include bg;
   content: "";
   position: absolute;
-  background-color: rgb(18, 18, 18);
   opacity: 1;
   inset: 0px -1px 4px;
   z-index: -1;
@@ -138,16 +135,15 @@ input:active {
   padding: 1rem 0 0 0;
   border-radius: 0;
   border: none;
+  @include transition-ease;
 
   .elipsis-container {
-    display: flex;
-    flex-direction: column;
+    @include flex-col;
     width: 100%;
     height: 100%;
 
     .elipsis-main {
-      display: flex;
-      flex-direction: row;
+      @include flex-row;
       width: 100%;
       height: 100%;
       padding: 0 2rem 0 2rem;
@@ -169,8 +165,7 @@ input:active {
       }
 
       .elipsis-col {
-        display: flex;
-        flex-direction: column;
+        @include flex-col;
         height: 100%;
         padding-right: 2rem;
 
@@ -182,13 +177,11 @@ input:active {
         }
 
         div {
-          display: flex;
-          flex-direction: row;
+          @include flex-row;
           justify-content: space-evenly;
 
           div {
-            display: flex;
-            flex-direction: column;
+            @include flex-col;
             margin: 0 1rem 0 1rem;
           }
         }
@@ -196,7 +189,7 @@ input:active {
     }
 
     .elipsis-lower {
-      display: flex;
+      @include flex-row;
       justify-content: space-evenly;
       background-color: rgba(0, 0, 0, 0.3);
       padding: 1rem 0;
@@ -217,12 +210,11 @@ input:active {
 }
 
 .creator-container {
-  display: flex;
-  background-color: rgb(18, 18, 18);
+  @include flex-row;
+  @include bg;
 }
 
 #nav-link-creator {
-  color: white;
   background: linear-gradient(103deg, #6157ff, #7067ff, #6157ff);
   border: 0;
   padding: 0 1rem 0 1rem;
@@ -237,7 +229,7 @@ input:active {
 }
 
 #dropdown-basic {
-  display: flex;
+  @include flex-row;
   align-items: center;
   padding: 0 1rem 0 0;
   border: none;
@@ -249,7 +241,6 @@ input:active {
   &:active {
     box-shadow: none;
   }
-
 
   img {
     height: 38px;
@@ -269,7 +260,6 @@ input:active {
   text-align: center;
 
   a {
-    color: rgb(255, 255, 255);
     border-bottom: 1px solid rgb(122, 122, 122);
     padding: .5rem 0 .5rem 0;
 
@@ -301,8 +291,7 @@ input:active {
 }
 
 #search-bar {
-  display: flex;
-  flex-direction: row;
+  @include flex-row;
   width: 80vw;
   height: 50px;
   margin-bottom: 10px;
@@ -319,9 +308,7 @@ input:active {
   }
 
   button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center;
     background: linear-gradient(45deg, rgb(153, 51, 255) 0%, rgb(255, 102, 102) 100%);
     width: 50px;
     height: 50px;
@@ -335,20 +322,17 @@ input:active {
 }
 
 .trending {
-  display: flex;
-  flex-direction: column;
+  @include flex-col;
 
   .trending-header {
-    display: flex;
-    flex-direction: row;
+    @include flex-row;
     justify-content: space-between;
     margin-bottom: 5px;
   }
 
   .trending-title {
-    display: flex;
+    @include flex-row;
     align-items: center;
-    flex-direction: row;
 
     svg {
       margin-left: 1rem;
@@ -366,8 +350,7 @@ input:active {
   }
 
   .trending-link {
-    display: flex;
-    flex-direction: column;
+    @include flex-col;
     justify-content: flex-end;
 
     svg {
@@ -386,8 +369,8 @@ input:active {
     width: 100%;
 
     div {
+      @include flex-row;
       text-align: center;
-      display: flex;
       align-items: center;
 
       img {
@@ -402,23 +385,20 @@ input:active {
 }
 
 .load-more-container {
-  display: flex;
+  @include flex-center;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 100%;
 
   button {
-    color: rgb(255, 255, 255);
+    @include transition-ease;
     padding: .5rem 1rem .5rem 1rem;
     border-radius: 2rem;
     font-size: 1rem;
     font-weight: 400;
     margin: 5vh 0 10vh 0;
     background: linear-gradient(to right, rgb(0, 204, 255), rgb(153, 51, 255) 31%, rgb(230, 70, 182) 52%, rgb(255, 249, 170) 77%, rgb(0, 255, 153), rgb(0, 204, 255)) 0% 50% / 200% 50%;
-    // animation: pulse 2s linear infinite;
     opacity: 0.8;
-    transition: .5s ease;
+    animation: pulse 2s linear infinite;
 
     &:hover {
       opacity: 1;
@@ -436,36 +416,29 @@ input:active {
 // FOOTER / PRIVACY / TERMS
 
 footer {
-  display: flex;
+  @include flex-row;
   position: fixed;
   right: 1rem;
   bottom: 1rem;
 
   a {
-    color: rgb(166, 166, 166);
     margin-right: 10px;
     border-radius: 5px;
     background: rgb(33, 33, 33);
     padding: 6px;
 
-    &:hover {
-      color: rgb(255, 255, 255);
-      text-decoration: none;
-    }
   }
 }
 
 // LOADER
 
 .loader-container {
-  display: flex;
+  @include flex-center;
   position: absolute;
   top: 60vh;
   left: 0;
   width: 100vw;
   height: 100vh;
-  align-items: center;
-  justify-content: center;
   z-index: 999;
 
   p {
@@ -519,419 +492,3 @@ footer {
 }
 
 // END LOADER
-
-/* RESPONSIVE BREAKPOINTS */
-
-
-@media only screen and (max-width: 767px) {
-
-
-  .landing-page {
-    width: 100vw;
-    margin-top: 1vh;
-  }
-
-  // NAV
-
-  #logo {
-    height: 25px;
-  }
-
-  .navbar {
-    width: 100vw;
-  }
-
-  .navbar-nav {
-    display: flex;
-    flex-direction: row;
-    width: 100vw;
-    justify-content: space-evenly;
-    background: transparent;
-    margin: 3vh 0 .5vh 0;
-  }
-
-  .navbar-light .navbar-nav .nav-link {
-    display: none;
-
-    svg {
-      font-size: 2rem;
-    }
-  }
-
-  #nav-elipsis-toggle {
-    display: block;
-  }
-
-  #dropdown-basic {
-    width: 100%;
-    height: 3rem;
-
-    img {
-      height: 3rem;
-      width: 3rem;
-    }
-
-    p {
-      font-size: 1.5rem;
-      padding: 0 2rem 0 2rem;
-      width: 100%;
-    }
-  }
-
-  .basic-nav-dropdown .dropdown-menu {
-    position: absolute;
-    left: 0;
-    width: 100vw;
-    background: linear-gradient(135deg, rgb(230, 70, 182) 0%, rgb(153, 51, 255) 100%) !important;
-    padding: 1rem 0 0 0;
-    border-radius: 0;
-    border: none;
-
-    .elipsis-container {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      height: 100%;
-
-      .elipsis-main {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: 100%;
-        padding: 0 2rem 0 2rem;
-
-        .elipsis-col:nth-of-type(1) {
-          width: 100%
-        }
-
-        .elipsis-col:nth-of-type(2) {
-          width: 100%
-        }
-
-        .elipsis-col:nth-of-type(3) {
-          width: 100%
-        }
-
-        .elipsis-col:nth-of-type(4) {
-          width: 100%
-        }
-
-        .elipsis-col {
-          padding-right: 2rem;
-
-          div {
-            justify-content: flex-start;
-
-            div {
-              margin: 0 2rem 0 0;
-            }
-          }
-        }
-      }
-
-      .elipsis-lower {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        background-color: rgba(0, 0, 0, 0.3);
-        padding: 1rem 0;
-        margin-top: 1rem;
-
-        h6 {
-          margin-bottom: .5rem;
-        }
-
-        a {
-          font-size: .9rem;
-          font-weight: 300;
-        }
-      }
-    }
-  }
-
-
-  // END NAV
-
-  // LANDING PAGE
-
-  .promo-container {
-    margin-bottom: 30px;
-  }
-
-  #search-bar {
-    width: 100vw;
-
-    button {
-
-      svg {
-        font-size: 1.5rem;
-      }
-    }
-  }
-
-  .trending {
-    display: flex;
-    flex-direction: column;
-
-    .trending-header {
-      width: 98vw;
-    }
-
-    .trending-title {
-      display: flex;
-      align-items: center;
-      flex-direction: row;
-
-      svg {
-        margin-left: 1rem;
-        margin-right: 1rem;
-      }
-    }
-
-    .search-term-heading {
-      margin-left: .5rem;
-    }
-
-    .trending-link {
-      svg {
-        margin-right: .5rem;
-      }
-    }
-
-    // GRID 
-
-    .grid-container {
-      grid-template-columns: 1fr;
-      width: 100%;
-
-      div {
-        text-align: center;
-        display: flex;
-        align-items: center;
-
-        img {
-          width: 100%;
-          border-radius: .20rem;
-        }
-      }
-    }
-
-    // END GRID 
-
-  }
-
-  // END LANDING PAGE
-
-  // CUSTOM LOAD MORE BUTTON
-
-  .load-more-container {
-
-    button {
-      padding: .5rem 1rem .5rem 1rem;
-      font-size: 1.3rem;
-      margin: 3vh 0 8vh 0;
-      opacity: 0.9;
-    }
-  }
-
-  // END CUSTOM LOAD MORE BUTTON
-
-  // FOOTER / PROVACY / TERMS
-
-  footer {
-    display: flex;
-    position: fixed;
-    right: .7rem;
-    bottom: .5rem;
-
-    a {
-      color: rgb(166, 166, 166);
-      margin-right: 10px;
-      border-radius: 5px;
-      background: rgb(33, 33, 33);
-      padding: 6px;
-
-      &:hover {
-        color: rgb(255, 255, 255);
-        text-decoration: none;
-      }
-    }
-  }
-
-  // END FOOTER / PROVACY / TERMS
-}
-
-
-@media only screen and (min-width: 768px) and (max-width: 1200px) {
-
-  // NAV
-
-  #logo {
-    height: 25px;
-  }
-
-  .navbar {
-    width: 100%;
-  }
-
-  .navbar-nav {
-    display: flex;
-    flex-direction: row;
-    width: 100vw;
-    justify-content: space-evenly;
-    background: transparent;
-    margin: 3vh 0 .5vh 0;
-  }
-
-  .navbar-light .navbar-nav .nav-link {
-    display: none;
-
-    svg {
-      font-size: 2rem;
-    }
-  }
-
-  #nav-elipsis-toggle {
-    display: block;
-  }
-
-  #dropdown-basic {
-    width: 100%;
-    height: 3rem;
-
-    img {
-      height: 3rem;
-      width: 3rem;
-    }
-
-    p {
-      font-size: 1.5rem;
-      padding: 0 2rem 0 2rem;
-      width: 100%;
-    }
-  }
-
-  .basic-nav-dropdown .dropdown-menu {
-    position: absolute;
-    left: 0;
-    width: 100vw;
-    background: linear-gradient(135deg, rgb(230, 70, 182) 0%, rgb(153, 51, 255) 100%) !important;
-    padding: 1rem 0 0 0;
-    border-radius: 0;
-    border: none;
-
-    .elipsis-container {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      height: 100%;
-
-      .elipsis-main {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: 100%;
-        padding: 0 2rem 0 2rem;
-
-        .elipsis-col:nth-of-type(1) {
-          width: 100%
-        }
-
-        .elipsis-col:nth-of-type(2) {
-          width: 100%
-        }
-
-        .elipsis-col:nth-of-type(3) {
-          width: 100%
-        }
-
-        .elipsis-col:nth-of-type(4) {
-          width: 100%
-        }
-
-        .elipsis-col {
-          padding-right: 2rem;
-
-          div {
-            justify-content: flex-start;
-
-            div {
-              margin: 0 2rem 0 0;
-            }
-          }
-        }
-      }
-
-      .elipsis-lower {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        background-color: rgba(0, 0, 0, 0.3);
-        padding: 1rem 0;
-        margin-top: 1rem;
-
-        h6 {
-          margin-bottom: .5rem;
-        }
-
-        a {
-          font-size: .9rem;
-          font-weight: 300;
-        }
-      }
-    }
-  }
-
-  // END NAV
-
-  .grid-container {
-    display: grid;
-    grid-template-columns: auto auto !important;
-    padding: 10px;
-    width: 100%;
-
-    div {
-      text-align: center;
-      display: flex;
-      align-items: center;
-
-      img {
-        width: 100%;
-        border-radius: .20rem;
-      }
-    }
-  }
-
-  .load-more-container {
-
-    button {
-      padding: .8rem 1.8rem .8rem 1.8rem;
-      font-size: 1.8rem;
-      opacity: 0.9;
-    }
-  }
-
-  // FOOTER
-
-  footer {
-    display: flex;
-    position: fixed;
-    right: .7rem;
-    bottom: .5rem;
-
-    a {
-      font-size: 1.5rem;
-      padding: 10px;
-
-      &:hover {
-        color: rgb(255, 255, 255);
-        text-decoration: none;
-      }
-    }
-  }
-
-  // END FOOTER
-
-}

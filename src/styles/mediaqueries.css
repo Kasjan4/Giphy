@@ -1,953 +1,261 @@
 /* RESPONSIVE BREAKPOINTS */
-
-/* MOBILE */
-
-@media only screen and (orientation: portrait) and (max-width: 767px) {
-
-  /* UNIVERSAL */
-
-  .cursor {
-    display: none;
+@media only screen and (max-width: 767px) {
+  #logo {
+    height: 25px;
   }
-
-  footer {
-    display: none;
+  .navbar {
+    width: 100vw;
   }
-
-  .btn-lg {
-    font-size: 5vw;
-  }
-
-  .animated {
-    padding: 3vw 6vw;
-  }
-
-  /* END UNIVERSAL */
-
-  /* NAV */
-
-  #social-github,
-  #social-fiverr,
-  #social-linkedin {
-    margin-left: 3vw;
-  }
-
-  #social-linkedin,
-  #social-github {
-    font-size: 6vw;
-  }
-
-  #social-fiverr svg {
-    height: 6vw;
-  }
-
-  .dark-mode-toggler {
-    font-size: 4.5vw;
-  }
-
-  .navbar-toggler {
-    font-size: 5vw;
-  }
-
-  .nav-item {
-    width: initial !important;
-    height: initial !important;
-  }
-
-  .slide {
-    background: none !important;
-    background-size: initial !important;
-  }
-
-  .slide:hover {
-    background-position: initial !important;
-  }
-
-  .nav-link {
-    font-size: 8vw !important;
-  }
-
-  .slide:hover .nav-link {
-    -webkit-transform: none;
-    -moz-transform: none;
-    -o-transform: none;
-    transform: none;
-    transition-duration: none;
-  }
-
   .navbar-nav {
-    width: initial !important;
-    margin-top: 3vh;
-    background: linear-gradient(71deg, rgba(0, 10, 162, 1) 0%, rgba(22, 82, 240, 1) 100%);
-  }
-
-  .navbar-toggler {
-    margin-right: 0;
-  }
-
-  /* END NAV */
-
-  /* HOME */
-
-  #intro-welcome {
-    font-size: 8vw;
-  }
-
-  #intro {
-    font-size: 15vw;
-    text-align: center;
-
-  }
-
-  #intro-lower {
-    flex-direction: column;
-  }
-
-  #intro-lower-title {
-    display: block;
-    font-size: 5vw;
-    margin-top: 2vh;
-    margin-bottom: 3vh;
-  }
-
-  .intro-inner-skills div {
-    justify-content: center;
-    font-size: 8vw;
-    height: 7vh;
-  }
-
-  #intro-lower-location {
-    margin-top: 3vh;
-    margin-bottom: 5vh;
-    font-size: 5vw;
-  }
-
-  /* ABOUT */
-
-  .about {
-    justify-content: start;
-  }
-
-  #landing-container {
-    width: 90vw;
-  }
-
-  #about-me {
-    flex-direction: column-reverse;
-    justify-content: center;
-    height: 85vh;
-    margin-top: 15vh;
-  }
-
-  .about-left {
-    width: 85vw;
-    text-align: center;
-  }
-
-  #about-right {
-    width: 70vw;
-    text-align: center;
-    margin-bottom: 3vh;
-  }
-
-  #photo {
-    width: 50vw;
-  }
-
-  #about-typed {
-    font-size: 4.5vw;
-    height: inherit;
-  }
-
-  .btn-about {
-    margin-top: 1vh;
-    margin-bottom: 0;
-    font-size: 1rem;
-  }
-
-  .about-left-wide {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 90vw;
-    height: inherit;
+    flex-direction: row;
+    width: 100vw;
+    justify-content: space-evenly;
+    background: transparent;
+    margin: 3vh 0 .5vh 0;
   }
-
-  .about-website-container {
-    flex-direction: column;
-    height: 70vh;
-  }
-
-  #website-info-title {
-    font-size: 8vw;
-  }
-
-  #website-info {
-    font-size: 4.2vw;
-    margin-bottom: 0;
-  }
-
-  #website-info a {
-    font-size: 1rem;
-  }
-
-  .website-info-idea {
-    margin-bottom: 3vh;
-  }
-
-  #cogs {
-    justify-content: center;
-    align-items: center;
-    position: static;
-    margin-top: 2vh;
-    margin-bottom: 3vh;
-    width: 90vw;
-  }
-
-  /* PORTFOLIO */
-
-  #portfolio-container {
-    flex-direction: column;
-    width: 90vw;
-    height: 80vh;
-  }
-
-  .carousel-wrapper {
-    width: 100%;
-    animation: none;
-  }
-
-  #project-desc,
-  #project-text {
-    width: 100%;
-  }
-
-  #project-desc {
-    margin-left: 0;
-  }
-
-  #project-text {
-    font-size: 5vw;
-  }
-
-  #project-title {
-    width: 100%;
-    margin-top: 1vh;
-    font-size: 10vw;
-  }
-
-  #project-btns {
-    margin-top: 3vh;
-    width: 90vw;
-  }
-
-  /* END PORTFOLIO */
-
-  /* SKILLS */
-
-  .skills {
-    overflow-y: scroll;
-  }
-
-  .skills-container {
-    height: 80vh;
-    width: 90vw;
-  }
-
-  .skill {
-    width: 90vw;
-    height: 90vw;
-    justify-content: center;
-  }
-
-  .skill-svg {
-    font-size: 20vw;
-    margin-bottom: 2vh;
-  }
-
-  #skill-info {
-    font-size: 8vw;
-  }
-
-  /* CONTACT */
-
-  .contact {
-    overflow-y: scroll;
-  }
-
-  form {
-    display: flex;
-    flex-direction: column;
-    width: 90vw;
-  }
-
-  #form {
-    margin-top: 15vh;
-  }
-
-  #form-container {
-    width: 90vw;
-    height: inherit;
-  }
-
-  .form-main {
-    display: flex !important;
-    flex-direction: column !important;
-    width: 90vw;
-  }
-
-  .btn-submit {
-    margin-bottom: 3vh;
-  }
-
-  .form-right,
-  .form-left {
-    position: static;
-    min-height: auto;
-  }
-
-  .form-left {
-    margin-bottom: 3vh;
-  }
-
-  #name,
-  #email,
-  #phone,
-  #company {
-    font-size: 8vw;
-    font-weight: 300;
-  }
-
-  #name::placeholder,
-  #email::placeholder,
-  #phone::placeholder,
-  #company::placeholder {
-    font-size: 8vw;
-    font-weight: 300;
-  }
-
-  #message {
-    font-size: 7vw;
-    font-weight: 300;
-  }
-
-  #message::placeholder {
-    font-size: 7vw;
-    font-weight: 300;
-  }
-
-  #contact-small {
-    font-size: 1.3rem;
-    font-weight: 200;
-  }
-
-  .form-complete {
-    position: absolute;
-    top: 40%;
-    width: 90vw;
-  }
-
-  .form-complete h2 {
-    font-size: 7vw;
-  }
-
-  .form-complete svg {
-    font-size: 8vw;
-  }
-
-}
-
-/* MOBILE LANDSCAPE */
-
-@media only screen and (orientation: landscape) and (max-height: 767px) and (max-width: 823px) {
-
-  /* UNIVERSAL */
-
-  .btn-lg {
-    font-size: 1.8vw;
-  }
-
-  .animated {
-    padding: 1.5vw 3vw;
-  }
-
-  .cursor {
+  .navbar-light .navbar-nav .nav-link {
     display: none;
   }
-
-  /* END UNIVERSAL */
-
-  /* HOME */
-
-  #landing-container {
-    margin-top: 10vh;
-  }
-
-  /* END HOME */
-
-  /* ABOUT */
-
-  #about-me {
-    margin-top: 10vh;
-    height: 80vh;
-  }
-
-  #about-typed {
-    font-size: 1.8vw;
-  }
-
-  .about-left {
-    height: 50vh;
-  }
-
-  .btn-about {
-    margin-top: 2vh;
-  }
-
-  #website-info {
-    font-size: 1.5vw;
-  }
-
-  #website-info a {
-    font-size: 1.6vw;
-  }
-
-  /* END ABOUT */
-
-  /* PORTFOLIO */
-
-  #project-title {
-    margin-bottom: 3vh;
-  }
-
-  #project-text {
-    font-size: 2vw;
-    padding-left: 2vw;
-    padding-right: 2vw;
-  }
-
-  /* END PORTFOLIO */
-
-  /* SKILLS */
-
-  .skills-container {
-    width: 90vw;
-    margin-top: 5vh;
-  }
-
-  #skill-info {
-    font-size: 1.4vw;
-  }
-
-  /* END SKILLS */
-
-  /* CONTACT */
-
-  #form-container {
-    height: 65vh;
-    width: 90vw;
-  }
-
-  .form-main {
-    margin-top: 5vh;
-  }
-
-  .form-group {
-    margin-bottom: 2vh;
-  }
-
-  #name,
-  #email,
-  #phone,
-  #company,
-  #name::placeholder,
-  #email::placeholder,
-  #phone::placeholder,
-  #company::placeholder {
-    font-size: 2vw;
-    font-weight: 300;
-  }
-
-  #message,
-  #message::placeholder {
-    font-size: 2vw;
-    font-weight: 300;
-  }
-
-  #contact-small {
-    font-size: 2vw;
-  }
-
-  .form-complete {
-    position: absolute;
-    top: 40%;
-    width: 90vw;
-  }
-
-  .form-complete h2 {
-    font-size: 4vw;
-  }
-
-  /* END CONTACT */
-}
-
-
-/* TABLETS */
-
-/* TABLET PORTRAIT */
-
-@media only screen and (orientation: portrait) and (max-width: 1024px) and (min-width: 768px) {
-
-  /* UNIVERSAL */
-
-  .btn-lg {
-    font-size: 3vw;
-  }
-
-  .animated {
-    padding: 2vw 4vw;
-  }
-
-  .cursor {
-    display: none;
-  }
-
-  /* END UNIVERSAL */
-
-  /* NAV */
-
-  .dark-mode-toggler {
-    font-size: 1.5rem;
-  }
-
-  #social-github,
-  #social-fiverr,
-  #social-linkedin {
-    margin-left: 3vw;
-  }
-
-  #social-linkedin,
-  #social-github {
+  .navbar-light .navbar-nav .nav-link svg {
     font-size: 2rem;
   }
-
-  #social-fiverr svg {
-    height: 3vw;
+  #nav-elipsis-toggle {
+    display: block;
   }
-
-  .nav-item {
-    width: initial !important;
-    height: initial !important;
+  #dropdown-basic {
+    width: 100%;
+    height: 3rem;
   }
-
-  .slide {
-    background: none !important;
-    background-size: initial !important;
+  #dropdown-basic img {
+    height: 3rem;
+    width: 3rem;
   }
-
-  .slide:hover {
-    background-position: initial !important;
-  }
-
-  .nav-link {
-    font-size: 2rem !important;
-    padding-right: 1rem !important;
-  }
-
-  .slide:hover .nav-link {
-    -webkit-transform: none;
-    -moz-transform: none;
-    -o-transform: none;
-    transform: none;
-    transition-duration: none;
-  }
-
-  .navbar-nav {
-    width: 40vw !important;
-  }
-
-  .navbar-toggler {
+  #dropdown-basic p {
     font-size: 1.5rem;
-    margin-right: 0;
-  }
-
-  /* HOME */
-
-  #intro-welcome {
-    font-size: 6vw;
-  }
-
-  #intro {
-    font-size: 9vw;
-  }
-
-  #intro-lower-title {
-    font-size: 3.5vw;
-  }
-
-  .intro-inner-skills div {
-    font-size: 4vw;
-  }
-
-  #intro-lower-location {
-    font-size: 4vw;
-  }
-
-  footer {
-    font-size: 1.5vw;
-  }
-
-  /* END HOME */
-
-  /* ABOUT */
-
-  #about-me {
-    flex-direction: column-reverse;
-    justify-content: center;
-    height: 70vh;
-    margin-top: 10vh;
-  }
-
-  #about-typed {
-    font-size: 3.2vw;
-    height: inherit;
-  }
-
-  .about-left {
-    width: 70vw;
-    text-align: center;
-  }
-
-  #about-right {
-    width: 35vw;
-    margin-bottom: 5vh;
-  }
-
-  #photo {
-    width: 35vw;
-    opacity: 0.9;
-  }
-
-  .about-website-container {
-    flex-direction: column;
-    height: 50vh;
-    margin-bottom: 3vh;
-  }
-
-  .about-left-wide {
-    width: 90vw;
-  }
-
-  #website-info {
-    font-size: 3.3vw;
-    margin-bottom: 0;
-  }
-
-  #website-info a {
-    font-size: 3.4vw;
-  }
-
-  #website-info-title {
-    font-size: 4.2vw;
-  }
-
-  .website-info-idea {
-    margin-bottom: 7vh;
-  }
-
-  #cogs {
-    top: 130%;
-    left: 60%;
-  }
-
-  #cog-l {
-    font-size: 6vw;
-  }
-
-  #cog-s {
-    font-size: 3vw;
-  }
-
-  /* END ABOUT */
-
-  /* PORTFOLIO */
-
-  #portfolio-container {
-    flex-direction: column;
-    width: 90vw;
-    height: 90vh;
-  }
-
-  .carousel-wrapper {
-    width: 90vw;
-    animation: none;
-  }
-
-  #project-desc,
-  #project-text {
+    padding: 0 2rem 0 2rem;
     width: 100%;
   }
-
-  #project-text {
-    font-size: 3.5vw;
+  .basic-nav-dropdown .dropdown-menu {
+    width: 100vw;
   }
-
-  #project-title {
-    width: 100%;
-    margin-top: 0;
-    font-size: 10vw;
-  }
-
-  #project-btns {
-    margin-top: 3vh;
-    width: 90vw;
-  }
-
-  /* END PORTFOLIO */
-
-  /* SKILLS */
-
-  .skills-container {
+  .basic-nav-dropdown .dropdown-menu .elipsis-container .elipsis-main {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .basic-nav-dropdown .dropdown-menu .elipsis-container .elipsis-main .elipsis-col:nth-of-type(1),
+  .basic-nav-dropdown .dropdown-menu .elipsis-container .elipsis-main .elipsis-col:nth-of-type(2),
+  .basic-nav-dropdown .dropdown-menu .elipsis-container .elipsis-main .elipsis-col:nth-of-type(3),
+  .basic-nav-dropdown .dropdown-menu .elipsis-container .elipsis-main .elipsis-col:nth-of-type(4) {
+    width: 100%;
+  }
+  .basic-nav-dropdown .dropdown-menu .elipsis-container .elipsis-main .elipsis-col div {
+    justify-content: flex-start;
+  }
+  .basic-nav-dropdown .dropdown-menu .elipsis-container .elipsis-main .elipsis-col div div {
+    margin: 0 2rem 0 0;
+  }
+  .basic-nav-dropdown .dropdown-menu .elipsis-container .elipsis-lower {
+    display: flex;
     justify-content: center;
     align-items: center;
-    width: 90vw;
-    height: 80vh;
+    flex-direction: column;
   }
-
-  .skill {
-    width: 26vw;
-    height: 26vw;
-    margin: 2vw;
+  .basic-nav-dropdown .dropdown-menu .elipsis-container .elipsis-lower h6 {
+    margin-bottom: .5rem;
   }
-
-  .skill-svg {
-    font-size: 5vw;
+  .landing-page {
+    width: 100vw;
+    margin-top: 1vh;
   }
-
-  #skill-info {
-    font-size: 2.8vw;
+  .promo-container {
+    margin-bottom: 30px;
   }
-
-  /* END SKILLS */
-
-  /* CONTACT */
-
-  .contact {
-    margin-top: 10vh;
-    height: 90vh;
+  #search-bar {
+    width: 100vw;
   }
-
-  .btn-contact {
-    margin-bottom: 1vh;
+  #search-bar button svg {
+    font-size: 1.5rem;
   }
-
-  #form-container {
-    width: 90vw;
-    height: max-content;
-  }
-
-  form {
+  .trending {
     display: flex;
     flex-direction: column;
-    width: 90vw;
   }
-
-  .form-main {
-    display: flex !important;
-    flex-direction: column !important;
-    width: 90vw;
-    margin-top: 2vh;
+  .trending .trending-header {
+    width: 98vw;
   }
-
-  .form-complete {
-    position: absolute;
-    top: 40%;
-    width: 90vw;
+  .trending .trending-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
-
-  .form-right,
-  .form-left {
-    position: static;
-    min-height: auto;
-    width: 90vw;
+  .trending .trending-title svg {
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
-
-  .form-left {
-    margin-bottom: 3vh;
+  .trending .search-term-heading {
+    margin-left: .5rem;
   }
-
-  #contact-small {
-    font-size: 3vw;
-    font-weight: 200;
+  .trending .trending-link svg {
+    margin-right: .5rem;
   }
-
-  #name,
-  #email,
-  #phone,
-  #company {
-    font-weight: 300;
+  .trending .grid-container {
+    grid-template-columns: 1fr;
+    width: 100%;
   }
-
-  #name::placeholder,
-  #email::placeholder,
-  #phone::placeholder,
-  #company::placeholder {
-    font-weight: 300;
+  .trending .grid-container div {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
   }
-
-  #message {
-    font-size: 5vw;
+  .trending .grid-container div img {
+    width: 100%;
+    border-radius: .20rem;
   }
-
-  #message::placeholder {
-    font-size: 5vw;
+  .load-more-container button {
+    padding: .5rem 1rem .5rem 1rem;
+    font-size: 1.3rem;
+    margin: 3vh 0 8vh 0;
+    opacity: 0.9;
   }
-
-  /* END CONTACT */
+  footer {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    right: .7rem;
+    bottom: .5rem;
+  }
+  footer a {
+    color: #a6a6a6;
+    margin-right: 10px;
+    border-radius: 5px;
+    background: #212121;
+    padding: 6px;
+  }
+  footer a:hover {
+    color: white;
+    text-decoration: none;
+  }
 }
 
-/* TABLET LANDSCAPE */
-
-@media only screen and (orientation: landscape) and (min-width: 1024px) and (max-width: 1279px) {
-
-  /* UNIVERSAL */
-  .btn-lg {
-    font-size: 2vw;
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+  #logo {
+    height: 25px;
   }
-
-  .animated {
-    padding: 1.5vw 3vw;
+  .navbar {
+    width: 100%;
   }
-
-  .cursor {
+  .navbar-nav {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    justify-content: space-evenly;
+    background: transparent;
+    margin: 3vh 0 .5vh 0;
+  }
+  .navbar-light .navbar-nav .nav-link {
     display: none;
   }
-
-  /* END UNIVERSAL */
-
-  /* HOME */
-
-  #intro-welcome {
-    font-size: 5vw;
+  .navbar-light .navbar-nav .nav-link svg {
+    font-size: 2rem;
   }
-
-  #intro-lower-title {
-    font-size: 3vw;
+  #nav-elipsis-toggle {
+    display: block;
   }
-
-  .intro-inner-skills div {
-    font-size: 3.5vw;
+  #dropdown-basic {
+    width: 100%;
+    height: 3rem;
   }
-
-  #intro-lower-location {
-    font-size: 2.5vw;
+  #dropdown-basic img {
+    height: 3rem;
+    width: 3rem;
   }
-
+  #dropdown-basic p {
+    font-size: 1.5rem;
+    padding: 0 2rem 0 2rem;
+    width: 100%;
+  }
+  .basic-nav-dropdown .dropdown-menu {
+    width: 100vw;
+  }
+  .basic-nav-dropdown .dropdown-menu .elipsis-container .elipsis-main {
+    display: flex;
+    flex-direction: column;
+  }
+  .basic-nav-dropdown .dropdown-menu .elipsis-container .elipsis-main .elipsis-col:nth-of-type(1),
+  .basic-nav-dropdown .dropdown-menu .elipsis-container .elipsis-main .elipsis-col:nth-of-type(2),
+  .basic-nav-dropdown .dropdown-menu .elipsis-container .elipsis-main .elipsis-col:nth-of-type(3),
+  .basic-nav-dropdown .dropdown-menu .elipsis-container .elipsis-main .elipsis-col:nth-of-type(4) {
+    width: 100%;
+  }
+  .basic-nav-dropdown .dropdown-menu .elipsis-container .elipsis-main .elipsis-col {
+    padding-right: 2rem;
+  }
+  .basic-nav-dropdown .dropdown-menu .elipsis-container .elipsis-main .elipsis-col div {
+    justify-content: flex-start;
+  }
+  .basic-nav-dropdown .dropdown-menu .elipsis-container .elipsis-main .elipsis-col div div {
+    margin: 0 2rem 0 0;
+  }
+  .basic-nav-dropdown .dropdown-menu .elipsis-container .elipsis-lower {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .basic-nav-dropdown .dropdown-menu .elipsis-container .elipsis-lower h6 {
+    margin-bottom: .5rem;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto !important;
+    padding: 10px;
+    width: 100%;
+  }
+  .grid-container div {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+  }
+  .grid-container div img {
+    width: 100%;
+    border-radius: .20rem;
+  }
+  .load-more-container button {
+    padding: .8rem 1.8rem .8rem 1.8rem;
+    font-size: 1.8rem;
+    opacity: 0.9;
+  }
   footer {
-    font-size: 1.5vw;
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    right: .7rem;
+    bottom: .5rem;
   }
-
-  /* END HOME */
-
-  /* ABOUT */
-
-  #about-right {
-    width: 30vw;
+  footer a {
+    font-size: 1.5rem;
+    padding: 10px;
   }
-
-  #photo {
-    width: 30vw;
+  footer a:hover {
+    color: white;
+    text-decoration: none;
   }
-
-  #about-typed {
-    font-size: 2.2vw;
-    height: inherit;
+  footer {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    right: .7rem;
+    bottom: .5rem;
   }
-
-  #website-info {
-    font-size: 2vw;
+  footer a {
+    font-size: 1.5rem;
+    padding: 10px;
   }
-
-  #website-info a {
-    font-size: 2.1vw;
+  footer a:hover {
+    color: white;
+    text-decoration: none;
   }
-
-  #cog-l {
-    font-size: 4vw;
-  }
-
-  #cog-s {
-    font-size: 2vw;
-  }
-
-  /* END ABOUT */
-
-  /* PORTFOLIO */
-
-  .carousel-wrapper {
-    width: 45vw;
-  }
-
-  #project-title {
-    font-size: 5vw;
-  }
-
-  #project-text {
-    font-size: 2vw;
-  }
-
-  /* END PORTFOLIO */
-
-  /* SKILS */
-
-  .skill {
-    width: 16vw;
-    height: 16vw;
-  }
-
-  #skill-info {
-    font-size: 1.7vw;
-  }
-
-  .skill-svg {
-    font-size: 2.5vw;
-  }
-
-  /* END SKILLS */
-
-  /* CONTACT */
-
-  #form-container {
-    width: 90vw;
-  }
-
-  #contact-small {
-    font-size: 2vw;
-    font-weight: 200;
-  }
-
-  #name,
-  #email,
-  #phone,
-  #company {
-    font-weight: 300;
-  }
-
-  #name::placeholder,
-  #email::placeholder,
-  #phone::placeholder,
-  #company::placeholder {
-    font-weight: 300;
-  }
-
-  #message,
-  #message::placeholder {
-    font-size: 4vw;
-  }
-
-
-  /* END CONTACT */
 }
+/*# sourceMappingURL=mediaqueries.css.map */

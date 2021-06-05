@@ -1,22 +1,34 @@
-@mixin floating-div {
-  -webkit-animation: float 6s ease-in-out infinite;
-  -moz-animation: float 6s ease-in-out infinite;
-  -ms-animation: float 6s ease-in-out infinite;
-  -o-animation: float 6s ease-in-out infinite;
-  animation: float 6s ease-in-out infinite;
+@mixin global-font-color {
+  color: #ffffff;
 }
 
-@mixin ease {
+@mixin global-link-color {
+  color: #e2e2e2 !important;
+}
+
+@mixin bg {
+  background-color: rgb(18, 18, 18);
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin transition-ease {
   -webkit-transition: .5s ease;
   -moz-transition: .5s ease;
   -o-transition: .5s ease;
   transition: .5s ease;
-}
-
-@mixin pulse {
-  -webkit-animation: pulse 1.5s linear infinite;
-  -moz-animation: pulse 1.5s linear infinite;
-  -ms-animation: pulse 1.5s linear infinite;
-  -o-animation: pulse 1.5s linear infinite;
-  animation: pulse 1.5s linear infinite;
 }
