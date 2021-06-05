@@ -19,7 +19,7 @@ const Home = () => {
   const [searchInput, setSearchInput] = useState('')
   // Toggle between trending and search, used for API call
   const [mode, setMode] = useState('trending')
-  // Current pagination index for API call, jumps 20 results each time when handleMoreGifs() is fired
+  // Current pagination index for API call, jumps 21 results each time when handleMoreGifs() is fired
   const [page, setPage] = useState(0)
   // Loader is displayed between API call and response
   const [loaded, setLoaded] = useState(false)
@@ -30,7 +30,7 @@ const Home = () => {
   useEffect(() => {
 
     try {
-      axios.get(`https://api.giphy.com/v1/gifs/${mode}?api_key=6vSx4w8I68CeIv4A0q1QycYQOEZkZdZN&q=${searchTerm}&limit=20&offset=${page}`)
+      axios.get(`https://api.giphy.com/v1/gifs/${mode}?api_key=6vSx4w8I68CeIv4A0q1QycYQOEZkZdZN&q=${searchTerm}&limit=21&offset=${page}`)
 
         .then((resp) => {
           if (page === 0) {
@@ -61,10 +61,10 @@ const Home = () => {
     setSearchTerm(searchInput)
   }
 
-  // Get 20 more results, useEffect and axios triggered when pagination index is changed
+  // Get 21 more results, useEffect and axios triggered when pagination index is changed
   function handleMoreGifs() {
     setLoaded(false)
-    setPage(page + 20)
+    setPage(page + 21)
   }
 
   // Confirm a certain image is loaded, and then display it by updating the boolean array to true at its index.
@@ -116,17 +116,17 @@ const Home = () => {
           <div className="grid-container">
 
             {gifs.data.map((gif, index) => {
-              return <Slide up key={index} spy={imageLoading[index]} delay={index % 2 === 0 ? 100 : 300} ssrReveal={true} duration={750} width={`${gif.images.original.width}px`} height={`${gif.images.original.height}px`}>
-                <div width={`${gif.images.original.width}px`} height={`${gif.images.original.height}px`}>
-                  <img src={gif.images.downsized_medium.url} style={imageLoading[index] ? { opacity: '1' } : { opacity: '0' }} width={gif.images.original.width} height={gif.images.original.height} alt={gif.title} onLoad={() => loadImage(index)} />
+              return <Fade up key={index} spy={imageLoading[index]} delay={index % 2 === 0 ? 100 : 300} ssrReveal={true} duration={750} >
+                <div >
+                  <img src={gif.images.downsized_medium.url} style={imageLoading[index] ? { opacity: '1' } : { opacity: '0' }} width={gif.images.original.width} alt={gif.title} onLoad={() => loadImage(index)} />
                 </div>
-              </Slide>
+              </Fade>
             })}
 
           </div>
 
           <div className="load-more-container">
-            {gifs.pagination.total_count > 0 ? <Slide up delay={1500} duration={500} spy={imageLoading[imageLoading.length - 1]}><button name="Load more" onClick={handleMoreGifs}>Load more</button></Slide> :
+            {gifs.pagination.total_count > 0 ? <Fade up delay={1500} duration={500} spy={imageLoading[imageLoading.length - 1]}><button name="Load more" onClick={handleMoreGifs}>Load more</button></Fade> :
               <p>No GIFs found for {searchTerm}<br />
               Try searching for Stickers instead?</p>}
           </div>
