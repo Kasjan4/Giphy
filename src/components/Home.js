@@ -116,8 +116,8 @@ const Home = () => {
           <div className="grid-container">
 
             {gifs.data.map((gif, index) => {
-              return <Slide up force={true} key={index} delay={index % 2 === 0 ? 300 : 550}>
-                <div>
+              return <Slide up when={imageLoading[index]} key={index} delay={index % 2 === 0 ? 100 : 300}>
+                <div width={`${gif.images.original.width}px`} height={`${gif.images.original.height}px`}>
                   <img style={imageLoading[index] ? { opacity: '1' } : { opacity: '0' }} src={gif.images.downsized_medium.url} width={gif.images.original.width} height={gif.images.original.height} onLoad={() => loadImage(index)} />
                 </div>
               </Slide>
