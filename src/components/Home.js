@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Fade from 'react-reveal/Fade';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
+
 const Home = () => {
 
+  // Icons
   const loop = <FontAwesomeIcon icon={faSearch} size="2x" />
   const angleRight = <FontAwesomeIcon icon={faAngleRight} size="1x" />
 
@@ -64,7 +65,11 @@ const Home = () => {
   function handleMoreGifs() {
     setLoaded(false);
     setPage(page + 21);
-    scrollToMoreGifs();
+
+    // Ensuring new gifs are at the correct viewpoint when the gifs state is updated
+    setTimeout(() => {
+      document.getElementById('currentGif').scrollIntoView();
+    }, 1000)
   }
 
   // Confirm a certain image is loaded, and then display it by updating the boolean array to true at its index
@@ -72,13 +77,6 @@ const Home = () => {
     let updatedIndex = [...imageLoading];
     updatedIndex[index] = true;
     setImageLoading(updatedIndex);
-  }
-
-  // Ensuring new gifs are at the correct viewpoint when the gifs state is updated
-  function scrollToMoreGifs() {
-    setTimeout(() => {
-      document.getElementById('currentGif').scrollIntoView();
-    }, 1000)
   }
 
 
@@ -119,10 +117,10 @@ const Home = () => {
           </div>
 
         </div>
-
+        {/* Loader or gifs are shown, depending on how long the API call takes. */}
         {loaded ? <div>
           <div className="grid-container">
-
+            {/* Mapping the gifs */}
             {gifs.data.map((gif, index) => {
               return <Fade up key={index} spy={imageLoading[index]} distance="40px" delay={index % 2 === 0 ? 100 : 300} ssrReveal={true} duration={550} >
                 <div id={index === gifs.data.length - 21 ? 'currentGif' : null}>
@@ -130,9 +128,9 @@ const Home = () => {
                 </div>
               </Fade>
             })}
-
           </div>
 
+          {/* Load more button or no gifs found message */}
           <div className="load-more-container">
             {gifs.pagination.total_count > 0 ? <button style={imageLoading[imageLoading.length - 1] ? { opacity: '1' } : { opacity: '0' }} name="Load more" onClick={handleMoreGifs} >Load more</button> :
               <p>No GIFs found for {searchTerm}<br />
@@ -140,7 +138,7 @@ const Home = () => {
           </div>
 
         </div> :
-
+          // Custom loader for the API call 
           <div className="loader-container">
             <div className="custom-loader"><div></div><div></div><div></div></div>
           </div>}
