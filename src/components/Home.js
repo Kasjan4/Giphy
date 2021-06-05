@@ -79,11 +79,11 @@ const Home = () => {
 
       <form id="search-bar" onSubmit={handleSearch}>
         <input id="search-input" type="text" placeholder="Search all the GIF's and Stickers" onChange={() => setSearchInput(event.target.value)} />
-        <button type="submit" id="submit">{loop}</button>
+        <button type="submit" name="Submit search" id="submit">{loop}</button>
       </form>
 
       <div className="promo-container">
-        <img id="promo" src="./src/img/promo.gif" />
+        <img id="promo" src="./src/img/promo.gif" alt="promo" />
       </div>
 
       <div className="trending">
@@ -118,7 +118,7 @@ const Home = () => {
             {gifs.data.map((gif, index) => {
               return <Slide up key={index} spy={imageLoading[index]} delay={index % 2 === 0 ? 100 : 300} ssrReveal={true} duration={750} width={`${gif.images.original.width}px`} height={`${gif.images.original.height}px`}>
                 <div width={`${gif.images.original.width}px`} height={`${gif.images.original.height}px`}>
-                  <img src={gif.images.downsized_medium.url} style={imageLoading[index] ? { opacity: '1' } : { opacity: '0' }} width={gif.images.original.width} height={gif.images.original.height} onLoad={() => loadImage(index)} />
+                  <img src={gif.images.downsized_medium.url} style={imageLoading[index] ? { opacity: '1' } : { opacity: '0' }} width={gif.images.original.width} height={gif.images.original.height} alt={gif.title} onLoad={() => loadImage(index)} />
                 </div>
               </Slide>
             })}
@@ -126,7 +126,7 @@ const Home = () => {
           </div>
 
           <div className="load-more-container">
-            {gifs.pagination.total_count > 0 ? <Slide up delay={1500} spy={imageLoading[imageLoading.length - 1]}><button onClick={handleMoreGifs}>Load more</button></Slide> :
+            {gifs.pagination.total_count > 0 ? <Slide up delay={1500} spy={imageLoading[imageLoading.length - 1]}><button name="Load more" onClick={handleMoreGifs}>Load more</button></Slide> :
               <p>No GIFs found for {searchTerm}<br />
               Try searching for Stickers instead?</p>}
           </div>

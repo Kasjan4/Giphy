@@ -54,6 +54,7 @@ input:active {
 
 #logo {
   height: 35px;
+  width: 35px;
   padding-left: 1rem;
 }
 
@@ -289,7 +290,7 @@ input:active {
 #search-bar {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 80vw;
   height: 50px;
   margin-bottom: 10px;
 }

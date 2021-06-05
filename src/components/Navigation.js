@@ -12,8 +12,8 @@ const Navigation = () => {
   return (
 
     <Navbar expand="xl">
-      <Navbar.Brand href="/">
-        <img id="logo" src="./src/img/logo.png" />
+      <Navbar.Brand href="/" name="Home" alt="Home">
+        <img id="logo" src="./src/img/logo.png" name="Giphy logo" alt="Giphy logo" />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
@@ -34,65 +34,65 @@ const Navigation = () => {
                   <h2>Categories</h2>
                   <div>
                     <div>
-                      <a href="/">GIPHY Studios</a>
-                      <a href="/">Animals</a>
-                      <a href="/">Actions</a>
-                      <a href="/">Anime</a>
-                      <a href="/">Cartoons</a>
-                      <a href="/">Emotions</a>
+                      <a href="/" alt="GIPHY Studios">GIPHY Studios</a>
+                      <a href="/" alt="Animals">Animals</a>
+                      <a href="/" alt="Actions">Actions</a>
+                      <a href="/" alt="Anime">Anime</a>
+                      <a href="/" alt="Cartoons">Cartoons</a>
+                      <a href="/" alt="Emotions">Emotions</a>
                     </div>
                     <div>
-                      <a href="/">Food/Drink</a>
-                      <a href="/">Gaming</a>
-                      <a href="/">Holidays/Greetings</a>
-                      <a href="/">Memes</a>
-                      <a href="/">Clips</a>
+                      <a href="/" alt="Food/Drink">Food/Drink</a>
+                      <a href="/" alt="Gaming">Gaming</a>
+                      <a href="/" alt="Holidays/Greetings">Holidays/Greetings</a>
+                      <a href="/" alt="Memes">Memes</a>
+                      <a href="/" alt="Clips">Clips</a>
                     </div>
                   </div>
                 </div>
                 <div className="elipsis-col">
                   <h2>Stickers</h2>
-                  <a href="/">Originals</a>
-                  <a href="/">Trending</a>
-                  <a href="/">Reactions</a>
-                  <a href="/">Packs</a>
-                  <a href="/">Cartoons</a>
-                  <a href="/">Emotions</a>
+                  <a href="/" alt="Originals">Originals</a>
+                  <a href="/" alt="Trending">Trending</a>
+                  <a href="/" alt="Reactions">Reactions</a>
+                  <a href="/" alt="Packs">Packs</a>
+                  <a href="/" alt="Cartoons">Cartoons</a>
+                  <a href="/" alt="Emotions">Emotions</a>
                 </div>
                 <div className="elipsis-col">
                   <h2>Apps</h2>
-                  <a href="/">GIPHY</a>
-                  <a href="/">GIPHY World</a>
-                  <a href="/">GIPHY Capture</a>
+                  <a href="/" alt="GIPHY">GIPHY</a>
+                  <a href="/" alt="GIPHY World">GIPHY World</a>
+                  <a href="/" alt="GIPHY Capture">GIPHY Capture</a>
                 </div>
                 <div className="elipsis-col">
                   <h2>About</h2>
                   <div>
                     <div>
-                      <a href="/">Team</a>
-                      <a href="/">Engineering Blog</a>
-                      <a href="/">GIPHY Arts</a>
-                      <a href="/">Studios</a>
-                      <a href="/">Developers</a>
-                      <a href="/">Labs</a>
+                      <a href="/" alt="Team">Team</a>
+                      <a href="/" alt="Engineering Blog">Engineering Blog</a>
+                      <a href="/" alt="GIPHY Arts">GIPHY Arts</a>
+                      <a href="/" alt="Studios">Studios</a>
+                      <a href="/" alt="Developers">Developers</a>
+                      <a href="/" alt="Labs">Labs</a>
                     </div>
                     <div>
-                      <a href="/">FAQ</a>
-                      <a href="/">Support</a>
-                      <a href="/">Jobs</a>
-                      <a href="/">DMCA</a>
-                      <a href="/">Guidelines</a>
+                      <a href="/" alt="FAQ">FAQ</a>
+                      <a href="/" alt="Support">Support</a>
+                      <a href="/" alt="Jobs">Jobs</a>
+                      <a href="/" alt="DMCA">DMCA</a>
+                      <a href="/" alt="Guidelines">Guidelines</a>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="elipsis-lower">
                 <h6>© 2021 GIPHY, Inc.</h6>
-                <a href="/">Terms of Service</a>
-                <a href="/">Community Guidelines</a>
-                <a href="/">Privacy Policy</a>
-                <a href="/">Copyright</a>
-                <a href="/">Manage Cookies</a>
+                <a href="/" alt="Terms of Service">Terms of Service</a>
+                <a href="/" alt="Community Guidelines">Community Guidelines</a>
+                <a href="/" alt="Privacy Policy">Privacy Policy</a>
+                <a href="/" alt="Copyright<">Copyright</a>
+                <a href="/" alt="Manage Cookies">Manage Cookies</a>
               </div>
             </div>
           </NavDropdown>
