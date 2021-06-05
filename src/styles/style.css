@@ -297,6 +297,8 @@ input:active {
 #search-bar #search-input {
   padding-left: 1rem;
   width: 100%;
+  border-radius: 0;
+  border: none;
 }
 
 #search-bar #search-input::placeholder {
@@ -395,7 +397,6 @@ input:active {
   font-weight: 400;
   margin: 5vh 0 10vh 0;
   background: linear-gradient(to right, #00ccff, #9933ff 31%, #e646b6 52%, #fff9aa 77%, #00ff99, #00ccff) 0% 50%/200% 50%;
-  animation: pulse 2s linear infinite;
   opacity: 0.8;
   transition: .5s ease;
 }
@@ -768,6 +769,25 @@ footer a:hover {
   .grid-container div img {
     width: 100%;
     border-radius: .20rem;
+  }
+  .load-more-container button {
+    padding: .8rem 1.8rem .8rem 1.8rem;
+    font-size: 1.8rem;
+    opacity: 0.9;
+  }
+  footer {
+    display: flex;
+    position: fixed;
+    right: .7rem;
+    bottom: .5rem;
+  }
+  footer a {
+    font-size: 1.5rem;
+    padding: 10px;
+  }
+  footer a:hover {
+    color: white;
+    text-decoration: none;
   }
 }
 /*# sourceMappingURL=style.css.map */

@@ -57,6 +57,7 @@ const Home = () => {
     if (searchInput.length < 1) return
     setLoaded(false)
     setMode('search')
+    setImageLoading([])
     setPage(0)
     setSearchTerm(searchInput)
   }
@@ -116,9 +117,9 @@ const Home = () => {
           <div className="grid-container">
 
             {gifs.data.map((gif, index) => {
-              return <Fade up key={index} spy={imageLoading[index]} delay={index % 2 === 0 ? 100 : 300} ssrReveal={true} duration={750} >
+              return <Fade up key={index} spy={imageLoading[index]} delay={index % 2 === 0 ? 100 : 300} ssrReveal={true} duration={550} >
                 <div >
-                  <img src={gif.images.downsized_medium.url} style={imageLoading[index] ? { opacity: '1' } : { opacity: '0' }} width={gif.images.original.width} alt={gif.title} onLoad={() => loadImage(index)} />
+                  <img src={gif.images.downsized.url} style={imageLoading[index] ? { opacity: '1' } : { opacity: '0' }} width={gif.images.downsized.width} alt={gif.title} onLoad={() => loadImage(index)} />
                 </div>
               </Fade>
             })}
@@ -126,7 +127,7 @@ const Home = () => {
           </div>
 
           <div className="load-more-container">
-            {gifs.pagination.total_count > 0 ? <Fade up delay={1500} duration={500} spy={imageLoading[imageLoading.length - 1]}><button name="Load more" onClick={handleMoreGifs}>Load more</button></Fade> :
+            {gifs.pagination.total_count > 0 ? <Fade up delay={1000} ssrReveal={true} duration={500} ><button name="Load more" onClick={handleMoreGifs} >Load more</button></Fade> :
               <p>No GIFs found for {searchTerm}<br />
               Try searching for Stickers instead?</p>}
           </div>

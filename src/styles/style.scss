@@ -310,6 +310,8 @@ input:active {
   #search-input {
     padding-left: 1rem;
     width: 100%;
+    border-radius: 0;
+    border: none;
 
     &::placeholder {
       color: grey;
@@ -414,7 +416,7 @@ input:active {
     font-weight: 400;
     margin: 5vh 0 10vh 0;
     background: linear-gradient(to right, rgb(0, 204, 255), rgb(153, 51, 255) 31%, rgb(230, 70, 182) 52%, rgb(255, 249, 170) 77%, rgb(0, 255, 153), rgb(0, 204, 255)) 0% 50% / 200% 50%;
-    animation: pulse 2s linear infinite;
+    // animation: pulse 2s linear infinite;
     opacity: 0.8;
     transition: .5s ease;
 
@@ -902,7 +904,34 @@ footer {
     }
   }
 
+  .load-more-container {
 
+    button {
+      padding: .8rem 1.8rem .8rem 1.8rem;
+      font-size: 1.8rem;
+      opacity: 0.9;
+    }
+  }
 
+  // FOOTER
+
+  footer {
+    display: flex;
+    position: fixed;
+    right: .7rem;
+    bottom: .5rem;
+
+    a {
+      font-size: 1.5rem;
+      padding: 10px;
+
+      &:hover {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+      }
+    }
+  }
+
+  // END FOOTER
 
 }

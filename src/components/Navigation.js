@@ -1,5 +1,5 @@
 import React from 'react'
-import { withRouter } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import { Navbar, Nav, NavDropdown, Dropdown } from 'react-bootstrap'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -27,72 +27,72 @@ const Navigation = () => {
           <Nav.Link href="/">Stickers</Nav.Link>
           <Nav.Link href="/">Artists</Nav.Link>
 
-          <NavDropdown title={elipsis} className="basic-nav-dropdown" id="nav-elipsis-toggle" style={{ position: 'static' }}>
+          <NavDropdown title={elipsis} className="basic-nav-dropdown" name="Dropdown" id="nav-elipsis-toggle" style={{ position: 'static' }}>
             <div className="elipsis-container">
               <div className="elipsis-main">
                 <div className="elipsis-col">
                   <h2>Categories</h2>
                   <div>
                     <div>
-                      <a href="/" alt="GIPHY Studios">GIPHY Studios</a>
-                      <a href="/" alt="Animals">Animals</a>
-                      <a href="/" alt="Actions">Actions</a>
-                      <a href="/" alt="Anime">Anime</a>
-                      <a href="/" alt="Cartoons">Cartoons</a>
-                      <a href="/" alt="Emotions">Emotions</a>
+                      <Link to="/" alt="GIPHY Studios">GIPHY Studios</Link>
+                      <Link to="/" alt="Animals">Animals</Link>
+                      <Link to="/" alt="Actions">Actions</Link>
+                      <Link to="/" alt="Anime">Anime</Link>
+                      <Link to="/" alt="Cartoons">Cartoons</Link>
+                      <Link to="/" alt="Emotions">Emotions</Link>
                     </div>
                     <div>
-                      <a href="/" alt="Food/Drink">Food/Drink</a>
-                      <a href="/" alt="Gaming">Gaming</a>
-                      <a href="/" alt="Holidays/Greetings">Holidays/Greetings</a>
-                      <a href="/" alt="Memes">Memes</a>
-                      <a href="/" alt="Clips">Clips</a>
+                      <Link to="/" alt="Food/Drink">Food/Drink</Link>
+                      <Link to="/" alt="Gaming">Gaming</Link>
+                      <Link to="/" alt="Holidays/Greetings">Holidays/Greetings</Link>
+                      <Link to="/" alt="Memes">Memes</Link>
+                      <Link to="/" alt="Clips">Clips</Link>
                     </div>
                   </div>
                 </div>
                 <div className="elipsis-col">
                   <h2>Stickers</h2>
-                  <a href="/" alt="Originals">Originals</a>
-                  <a href="/" alt="Trending">Trending</a>
-                  <a href="/" alt="Reactions">Reactions</a>
-                  <a href="/" alt="Packs">Packs</a>
-                  <a href="/" alt="Cartoons">Cartoons</a>
-                  <a href="/" alt="Emotions">Emotions</a>
+                  <Link to="/" alt="Originals">Originals</Link>
+                  <Link to="/" alt="Trending">Trending</Link>
+                  <Link to="/" alt="Reactions">Reactions</Link>
+                  <Link to="/" alt="Packs">Packs</Link>
+                  <Link to="/" alt="Cartoons">Cartoons</Link>
+                  <Link to="/" alt="Emotions">Emotions</Link>
                 </div>
                 <div className="elipsis-col">
                   <h2>Apps</h2>
-                  <a href="/" alt="GIPHY">GIPHY</a>
-                  <a href="/" alt="GIPHY World">GIPHY World</a>
-                  <a href="/" alt="GIPHY Capture">GIPHY Capture</a>
+                  <Link to="/" alt="GIPHY">GIPHY</Link>
+                  <Link to="/" alt="GIPHY World">GIPHY World</Link>
+                  <Link to="/" alt="GIPHY Capture">GIPHY Capture</Link>
                 </div>
                 <div className="elipsis-col">
                   <h2>About</h2>
                   <div>
                     <div>
-                      <a href="/" alt="Team">Team</a>
-                      <a href="/" alt="Engineering Blog">Engineering Blog</a>
-                      <a href="/" alt="GIPHY Arts">GIPHY Arts</a>
-                      <a href="/" alt="Studios">Studios</a>
-                      <a href="/" alt="Developers">Developers</a>
-                      <a href="/" alt="Labs">Labs</a>
+                      <Link to="/" alt="Team">Team</Link>
+                      <Link to="/" alt="Engineering Blog">Engineering Blog</Link>
+                      <Link to="/" alt="GIPHY Arts">GIPHY Arts</Link>
+                      <Link to="/" alt="Studios">Studios</Link>
+                      <Link to="/" alt="Developers">Developers</Link>
+                      <Link to="/" alt="Labs">Labs</Link>
                     </div>
                     <div>
-                      <a href="/" alt="FAQ">FAQ</a>
-                      <a href="/" alt="Support">Support</a>
-                      <a href="/" alt="Jobs">Jobs</a>
-                      <a href="/" alt="DMCA">DMCA</a>
-                      <a href="/" alt="Guidelines">Guidelines</a>
+                      <Link to="/" alt="FAQ">FAQ</Link>
+                      <Link to="/" alt="Support">Support</Link>
+                      <Link to="/" alt="Jobs">Jobs</Link>
+                      <Link to="/" alt="DMCA">DMCA</Link>
+                      <Link to="/" alt="Guidelines">Guidelines</Link>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="elipsis-lower">
                 <h6>© 2021 GIPHY, Inc.</h6>
-                <a href="/" alt="Terms of Service">Terms of Service</a>
-                <a href="/" alt="Community Guidelines">Community Guidelines</a>
-                <a href="/" alt="Privacy Policy">Privacy Policy</a>
-                <a href="/" alt="Copyright<">Copyright</a>
-                <a href="/" alt="Manage Cookies">Manage Cookies</a>
+                <Link to="/" alt="Terms of Service">Terms of Service</Link>
+                <Link to="/" alt="Community Guidelines">Community Guidelines</Link>
+                <Link to="/" alt="Privacy Policy">Privacy Policy</Link>
+                <Link to="/" alt="Copyright<">Copyright</Link>
+                <Link to="/" alt="Manage Cookies">Manage Cookies</Link>
               </div>
             </div>
           </NavDropdown>
