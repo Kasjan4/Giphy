@@ -304,6 +304,9 @@ input:active {
 }
 
 #search-bar button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: linear-gradient(45deg, #9933ff 0%, #ff6666 100%);
   width: 50px;
   height: 50px;
@@ -495,7 +498,7 @@ footer a:hover {
     height: 25px;
   }
   .navbar {
-    width: 100%;
+    width: 100vw;
   }
   .navbar-nav {
     display: flex;
@@ -589,6 +592,12 @@ footer a:hover {
   .promo-container {
     margin-bottom: 30px;
   }
+  #search-bar {
+    width: 100vw;
+  }
+  #search-bar button svg {
+    font-size: 1.5rem;
+  }
   .trending {
     display: flex;
     flex-direction: column;
@@ -627,7 +636,7 @@ footer a:hover {
   .load-more-container button {
     padding: .5rem 1rem .5rem 1rem;
     font-size: 1.3rem;
-    margin: 3vh 0 12vh 0;
+    margin: 3vh 0 8vh 0;
     opacity: 0.9;
   }
   footer {

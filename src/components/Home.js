@@ -126,7 +126,7 @@ const Home = () => {
           </div>
 
           <div className="load-more-container">
-            {gifs.pagination.total_count > 0 ? <Slide up delay={1500} spy={imageLoading[imageLoading.length - 1]}><button name="Load more" onClick={handleMoreGifs}>Load more</button></Slide> :
+            {gifs.pagination.total_count > 0 ? <Slide up delay={1500} duration={500} spy={imageLoading[imageLoading.length - 1]}><button name="Load more" onClick={handleMoreGifs}>Load more</button></Slide> :
               <p>No GIFs found for {searchTerm}<br />
               Try searching for Stickers instead?</p>}
           </div>

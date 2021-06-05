@@ -106,7 +106,7 @@ const Navigation = () => {
           <Dropdown>
 
             <Dropdown.Toggle variant="success" id="dropdown-basic">
-              <img className="nav-user-picture" src="./src/img/profile.gif" />
+              <img className="nav-user-picture" src="./src/img/profile.gif" alt="Profile picture" />
               <p>kasjan</p>
             </Dropdown.Toggle>
 

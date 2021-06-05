@@ -317,6 +317,9 @@ input:active {
   }
 
   button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: linear-gradient(45deg, rgb(153, 51, 255) 0%, rgb(255, 102, 102) 100%);
     width: 50px;
     height: 50px;
@@ -533,7 +536,7 @@ footer {
   }
 
   .navbar {
-    width: 100%;
+    width: 100vw;
   }
 
   .navbar-nav {
@@ -654,6 +657,17 @@ footer {
     margin-bottom: 30px;
   }
 
+  #search-bar {
+    width: 100vw;
+
+    button {
+
+      svg {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
   .trending {
     display: flex;
     flex-direction: column;
@@ -714,7 +728,7 @@ footer {
     button {
       padding: .5rem 1rem .5rem 1rem;
       font-size: 1.3rem;
-      margin: 3vh 0 12vh 0;
+      margin: 3vh 0 8vh 0;
       opacity: 0.9;
     }
   }
