@@ -135,7 +135,7 @@ var Home = function () {
     return (react_1.default.createElement("main", null,
         react_1.default.createElement("form", { id: "search-bar", onSubmit: handleSearch },
             react_1.default.createElement("input", { id: "search-input", value: searchInput, type: "text", placeholder: "Search all the GIF's and Stickers", onChange: function (e) { return setSearchInput(e.currentTarget.value); } }),
-            react_1.default.createElement("button", { type: "submit", name: "Submit search", id: "submit" }, loop)),
+            react_1.default.createElement("button", { type: "submit", name: "Submit search", "aria-label": "submit", id: "submit" }, loop)),
         react_1.default.createElement("div", { className: "promo-container" },
             react_1.default.createElement("img", { id: "promo", src: imagePath + "promo.gif", alt: "promo" })),
         react_1.default.createElement("div", { className: "trending" },
@@ -160,9 +160,9 @@ var Home = function () {
                         angleRight))),
             loaded ? react_1.default.createElement("div", null,
                 react_1.default.createElement("div", { className: "grid-container" }, gifs.data.map(function (gif, index) {
-                    return react_1.default.createElement(Fade_1.default, { up: true, key: index, spy: imageLoading[index], distance: "40px", delay: index % 2 === 0 ? 100 : 300, ssrReveal: true, duration: 550 },
+                    return react_1.default.createElement(Fade_1.default, { up: true, key: index, spy: imageLoading[index], distance: "40px", delay: index % 2 === 0 ? 100 : 300, ssrReveal: true, duration: 350 },
                         react_1.default.createElement("div", { id: index === gifs.data.length - 21 ? 'currentGif' : undefined },
-                            react_1.default.createElement("img", { src: gif.images.downsized.url, style: imageLoading[index] ? { opacity: '1' } : { opacity: '0' }, width: gif.images.downsized.width, alt: gif.title, onLoad: function () { return loadImage(index); } })));
+                            react_1.default.createElement("img", { src: gif.images.downsized.url, style: imageLoading[index] ? { opacity: '1' } : { opacity: '0' }, width: gif.images.downsized.width, height: gif.images.downsized.height, alt: gif.title, onLoad: function () { return loadImage(index); } })));
                 })),
                 react_1.default.createElement("div", { className: "load-more-container" }, gifs.pagination.total_count > 0 ? react_1.default.createElement("button", { style: imageLoading[imageLoading.length - 1] ? { opacity: '1' } : { opacity: '0' }, name: "Load more", onClick: handleMoreGifs }, "Load more") :
                     react_1.default.createElement("p", null,
@@ -177,7 +177,7 @@ var Home = function () {
                         react_1.default.createElement("div", null),
                         react_1.default.createElement("div", null)))),
         react_1.default.createElement("footer", null,
-            react_1.default.createElement("a", { href: "https://support.giphy.com/hc/en-us/articles/360032872931" }, "Privacy"),
-            react_1.default.createElement("a", { href: "https://support.giphy.com/hc/en-us/articles/360020027752-GIPHY-Terms-of-Service" }, "Terms"))));
+            react_1.default.createElement("a", { href: "https://support.giphy.com/hc/en-us/articles/360032872931", rel: "noreferrer" }, "Privacy"),
+            react_1.default.createElement("a", { href: "https://support.giphy.com/hc/en-us/articles/360020027752-GIPHY-Terms-of-Service", rel: "noreferrer" }, "Terms"))));
 };
 exports.default = Home;

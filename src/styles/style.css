@@ -215,13 +215,13 @@ input:active {
   background-color: #121212;
 }
 
-#nav-link-creator {
+.nav-link-creator {
   background: linear-gradient(103deg, #6157ff, #7067ff, #6157ff);
   border: 0;
   padding: 0 1rem 0 1rem;
 }
 
-#nav-link-creator::before {
+.nav-link-creator::before {
   background: transparent !important;
 }
 
@@ -371,9 +371,8 @@ main {
 
 .trending .grid-container div {
   display: flex;
-  flex-direction: row;
-  text-align: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .trending .grid-container div img {

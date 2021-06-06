@@ -210,7 +210,7 @@ input:active {
   @include bg;
 }
 
-#nav-link-creator {
+.nav-link-creator {
   background: linear-gradient(103deg, #6157ff, #7067ff, #6157ff);
   border: 0;
   padding: 0 1rem 0 1rem;
@@ -365,9 +365,8 @@ main {
     width: 100%;
 
     div {
-      @include flex-row;
-      text-align: center;
-      align-items: center;
+      @include flex-col;
+      justify-content: center;
 
       img {
         width: 100%;

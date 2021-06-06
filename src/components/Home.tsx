@@ -108,7 +108,7 @@ const Home = () => {
 
       <form id="search-bar" onSubmit={handleSearch}>
         <input id="search-input" value={searchInput} type="text" placeholder="Search all the GIF's and Stickers" onChange={(e) => setSearchInput(e.currentTarget.value)} />
-        <button type="submit" name="Submit search" id="submit">{loop}</button>
+        <button type="submit" name="Submit search" aria-label="submit" id="submit">{loop}</button>
       </form>
 
       <div className="promo-container">
@@ -145,9 +145,9 @@ const Home = () => {
           <div className="grid-container">
             {/* Mapping the gifs */}
             {gifs.data.map((gif: any, index: number) => {
-              return <Fade up key={index} spy={imageLoading[index]} distance="40px" delay={index % 2 === 0 ? 100 : 300} ssrReveal={true} duration={550} >
+              return <Fade up key={index} spy={imageLoading[index]} distance="40px" delay={index % 2 === 0 ? 100 : 300} ssrReveal={true} duration={350} >
                 <div id={index === gifs.data.length - 21 ? 'currentGif' : undefined}>
-                  <img src={gif.images.downsized.url} style={imageLoading[index] ? { opacity: '1' } : { opacity: '0' }} width={gif.images.downsized.width} alt={gif.title} onLoad={() => loadImage(index)} />
+                  <img src={gif.images.downsized.url} style={imageLoading[index] ? { opacity: '1' } : { opacity: '0' }} width={gif.images.downsized.width} height={gif.images.downsized.height} alt={gif.title} onLoad={() => loadImage(index)} />
                 </div>
               </Fade>
             })}
@@ -169,8 +169,8 @@ const Home = () => {
       </div>
 
       <footer>
-        <a href="https://support.giphy.com/hc/en-us/articles/360032872931">Privacy</a>
-        <a href="https://support.giphy.com/hc/en-us/articles/360020027752-GIPHY-Terms-of-Service">Terms</a>
+        <a href="https://support.giphy.com/hc/en-us/articles/360032872931" rel="noreferrer">Privacy</a>
+        <a href="https://support.giphy.com/hc/en-us/articles/360020027752-GIPHY-Terms-of-Service" rel="noreferrer">Terms</a>
       </footer>
 
     </main>

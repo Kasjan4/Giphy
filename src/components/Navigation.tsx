@@ -100,8 +100,8 @@ const Navigation = () => {
 
 
           <div className="creator-container">
-            <Nav.Link href="/" id="nav-link-creator" style={{ marginLeft: '1rem', marginRight: '.5rem' }}>Upload</Nav.Link>
-            <Nav.Link href="/" id="nav-link-creator" style={{ marginRight: '1rem' }}>Create</Nav.Link>
+            <Nav.Link href="/" className="nav-link-creator" style={{ marginLeft: '1rem', marginRight: '.5rem' }}>Upload</Nav.Link>
+            <Nav.Link href="/" className="nav-link-creator" style={{ marginRight: '1rem' }}>Create</Nav.Link>
           </div>
 
           <Dropdown>
