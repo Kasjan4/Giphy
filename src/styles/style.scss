@@ -6,10 +6,6 @@
   font-family: 'Lato', sans-serif;
 }
 
-// html {
-//   scroll-behavior: smooth;
-// }
-
 #root {
   @include flex-col;
   @include bg;
@@ -379,9 +375,6 @@ main {
       }
     }
 
-    #currentGif {
-      // scroll-margin: 50px;
-    }
   }
 
   // END GRID 
