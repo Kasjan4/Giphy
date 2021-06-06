@@ -378,6 +378,7 @@ main {
 .trending .grid-container div img {
   width: 100%;
   border-radius: .20rem;
+  height: min-content;
 }
 
 .load-more-container {

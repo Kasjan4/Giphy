@@ -146,19 +146,8 @@
     // GRID 
 
     .grid-container {
-      grid-template-columns: 1fr;
+      grid-template-columns: auto;
       width: 100%;
-
-      div {
-        @include flex-row;
-        text-align: center;
-        align-items: center;
-
-        img {
-          width: 100%;
-          border-radius: .20rem;
-        }
-      }
     }
 
     // END GRID 
@@ -301,21 +290,7 @@
   // LANDING PAGE
 
   .grid-container {
-    display: grid;
     grid-template-columns: auto auto !important;
-    padding: 10px;
-    width: 100%;
-
-    div {
-      @include flex-row;
-      text-align: center;
-      align-items: center;
-
-      img {
-        width: 100%;
-        border-radius: .20rem;
-      }
-    }
   }
 
   .load-more-container {
