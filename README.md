@@ -12,6 +12,7 @@
 - React 17.0.2
 - JavaScript ES6
 - React-Bootstrap
+- TypeScript
 - Webpack, babel
 - Hash router
 - SCSS
