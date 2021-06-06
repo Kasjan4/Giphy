@@ -46,7 +46,7 @@ const Home = () => {
             // Ensuring new gifs are at the correct viewpoint when the gifs state is updated
             setTimeout(() => {
               smoothScroll('#currentGif', 100)
-            }, 500)
+            }, 1000)
           }
         })
 
@@ -83,6 +83,7 @@ const Home = () => {
     const element = document.querySelector(target);
     const targetPosition = Math.round(element.getBoundingClientRect().top - 80);
     const startPosition = Math.round(window.pageYOffset);
+    console.log(startPosition, targetPosition)
     const distance = targetPosition - startPosition;
     let startTime = null;
 
@@ -102,6 +103,8 @@ const Home = () => {
   }
 
 
+
+
   return (
     <div className="landing-page" >
 
@@ -111,7 +114,7 @@ const Home = () => {
       </form>
 
       <div className="promo-container">
-        <img id="promo" src="./src/img/promo.gif" alt="promo" />
+        <img id="promo" src="./img/promo.gif" alt="promo" />
       </div>
 
       <div className="trending">

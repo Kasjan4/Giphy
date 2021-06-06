@@ -397,7 +397,7 @@ input:active {
   font-size: 1rem;
   font-weight: 400;
   margin: 5vh 0 10vh 0;
-  background: linear-gradient(to right, #00ccff, #9933ff 31%, #e646b6 52%, #fff9aa 77%, #00ff99, #00ccff) 0% 50%/200% 50%;
+  background: #7067ff;
   opacity: 0.8;
   animation: pulse 2s linear infinite;
 }
