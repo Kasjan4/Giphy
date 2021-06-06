@@ -1,132 +1,92 @@
-import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
-import { Navbar, Nav, NavDropdown, Dropdown } from 'react-bootstrap';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
-
-const Navigation = () => {
-
-  const elipsis = <FontAwesomeIcon icon={faEllipsisV} size="1x" />
-
-  return (
-
-    <Navbar expand="xl">
-      <Navbar.Brand href="/" name="Home" alt="Home">
-        <img id="logo" src="./src/img/logo.png" name="Giphy logo" alt="Giphy logo" />
-      </Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-
-      <Navbar.Collapse id="basic-navbar-nav">
-
-        <Nav className="mr-auto">
-
-          <Nav.Link href="/">Reactions</Nav.Link>
-          <Nav.Link href="/">Entertainment</Nav.Link>
-          <Nav.Link href="/">Sports</Nav.Link>
-          <Nav.Link href="/">Stickers</Nav.Link>
-          <Nav.Link href="/">Artists</Nav.Link>
-
-          <NavDropdown title={elipsis} className="basic-nav-dropdown" name="Dropdown" id="nav-elipsis-toggle" style={{ position: 'static' }}>
-            <div className="elipsis-container">
-              <div className="elipsis-main">
-                <div className="elipsis-col">
-                  <h2>Categories</h2>
-                  <div>
-                    <div>
-                      <Link to="/" alt="GIPHY Studios">GIPHY Studios</Link>
-                      <Link to="/" alt="Animals">Animals</Link>
-                      <Link to="/" alt="Actions">Actions</Link>
-                      <Link to="/" alt="Anime">Anime</Link>
-                      <Link to="/" alt="Cartoons">Cartoons</Link>
-                      <Link to="/" alt="Emotions">Emotions</Link>
-                    </div>
-                    <div>
-                      <Link to="/" alt="Food/Drink">Food/Drink</Link>
-                      <Link to="/" alt="Gaming">Gaming</Link>
-                      <Link to="/" alt="Holidays/Greetings">Holidays/Greetings</Link>
-                      <Link to="/" alt="Memes">Memes</Link>
-                      <Link to="/" alt="Clips">Clips</Link>
-                    </div>
-                  </div>
-                </div>
-                <div className="elipsis-col">
-                  <h2>Stickers</h2>
-                  <Link to="/" alt="Originals">Originals</Link>
-                  <Link to="/" alt="Trending">Trending</Link>
-                  <Link to="/" alt="Reactions">Reactions</Link>
-                  <Link to="/" alt="Packs">Packs</Link>
-                  <Link to="/" alt="Cartoons">Cartoons</Link>
-                  <Link to="/" alt="Emotions">Emotions</Link>
-                </div>
-                <div className="elipsis-col">
-                  <h2>Apps</h2>
-                  <Link to="/" alt="GIPHY">GIPHY</Link>
-                  <Link to="/" alt="GIPHY World">GIPHY World</Link>
-                  <Link to="/" alt="GIPHY Capture">GIPHY Capture</Link>
-                </div>
-                <div className="elipsis-col">
-                  <h2>About</h2>
-                  <div>
-                    <div>
-                      <Link to="/" alt="Team">Team</Link>
-                      <Link to="/" alt="Engineering Blog">Engineering Blog</Link>
-                      <Link to="/" alt="GIPHY Arts">GIPHY Arts</Link>
-                      <Link to="/" alt="Studios">Studios</Link>
-                      <Link to="/" alt="Developers">Developers</Link>
-                      <Link to="/" alt="Labs">Labs</Link>
-                    </div>
-                    <div>
-                      <Link to="/" alt="FAQ">FAQ</Link>
-                      <Link to="/" alt="Support">Support</Link>
-                      <Link to="/" alt="Jobs">Jobs</Link>
-                      <Link to="/" alt="DMCA">DMCA</Link>
-                      <Link to="/" alt="Guidelines">Guidelines</Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="elipsis-lower">
-                <h6>© 2021 GIPHY, Inc.</h6>
-                <Link to="/" alt="Terms of Service">Terms of Service</Link>
-                <Link to="/" alt="Community Guidelines">Community Guidelines</Link>
-                <Link to="/" alt="Privacy Policy">Privacy Policy</Link>
-                <Link to="/" alt="Copyright<">Copyright</Link>
-                <Link to="/" alt="Manage Cookies">Manage Cookies</Link>
-              </div>
-            </div>
-          </NavDropdown>
-
-
-          <div className="creator-container">
-            <Nav.Link href="/" id="nav-link-creator" style={{ marginLeft: '1rem', marginRight: '.5rem' }}>Upload</Nav.Link>
-            <Nav.Link href="/" id="nav-link-creator" style={{ marginRight: '1rem' }}>Create</Nav.Link>
-          </div>
-
-          <Dropdown>
-
-            <Dropdown.Toggle variant="success" id="dropdown-basic">
-              <img className="nav-user-picture" src="./src/img/profile.gif" alt="Profile picture" />
-              <p>kasjan</p>
-            </Dropdown.Toggle>
-
-            <Dropdown.Menu id="nav-dropdown-user">
-              <Dropdown.Item href="/">Settings</Dropdown.Item>
-              <Dropdown.Item href="/">Favorites</Dropdown.Item>
-              <Dropdown.Item href="/">Log Out</Dropdown.Item>
-            </Dropdown.Menu>
-
-          </Dropdown>
-
-        </Nav>
-
-      </Navbar.Collapse >
-
-    </Navbar >
-
-  )
-
-}
-
-
-export default withRouter(Navigation)
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(require("react"));
+var react_router_dom_1 = require("react-router-dom");
+var react_bootstrap_1 = require("react-bootstrap");
+var react_fontawesome_1 = require("@fortawesome/react-fontawesome");
+var free_solid_svg_icons_1 = require("@fortawesome/free-solid-svg-icons");
+var Navigation = function () {
+    var elipsis = react_1.default.createElement(react_fontawesome_1.FontAwesomeIcon, { icon: free_solid_svg_icons_1.faEllipsisV, size: "1x" });
+    // Absolute file path option for images, GitHub pages needs this
+    var imagePath = process.env.NODE_ENV === 'development' ? './img/' : './src/img/';
+    return (react_1.default.createElement(react_bootstrap_1.Navbar, { expand: "xl" },
+        react_1.default.createElement(react_bootstrap_1.Navbar.Brand, { href: "/" },
+            react_1.default.createElement("img", { id: "logo", src: imagePath + "logo.png", alt: "Giphy logo" })),
+        react_1.default.createElement(react_bootstrap_1.Navbar.Toggle, { "aria-controls": "basic-navbar-nav" }),
+        react_1.default.createElement(react_bootstrap_1.Navbar.Collapse, { id: "basic-navbar-nav" },
+            react_1.default.createElement(react_bootstrap_1.Nav, { className: "mr-auto" },
+                react_1.default.createElement(react_bootstrap_1.Nav.Link, { href: "/" }, "Reactions"),
+                react_1.default.createElement(react_bootstrap_1.Nav.Link, { href: "/" }, "Entertainment"),
+                react_1.default.createElement(react_bootstrap_1.Nav.Link, { href: "/" }, "Sports"),
+                react_1.default.createElement(react_bootstrap_1.Nav.Link, { href: "/" }, "Stickers"),
+                react_1.default.createElement(react_bootstrap_1.Nav.Link, { href: "/" }, "Artists"),
+                react_1.default.createElement(react_bootstrap_1.NavDropdown, { title: elipsis, className: "basic-nav-dropdown", id: "nav-elipsis-toggle", style: { position: 'static' } },
+                    react_1.default.createElement("div", { className: "elipsis-container" },
+                        react_1.default.createElement("div", { className: "elipsis-main" },
+                            react_1.default.createElement("div", { className: "elipsis-col" },
+                                react_1.default.createElement("h2", null, "Categories"),
+                                react_1.default.createElement("div", null,
+                                    react_1.default.createElement("div", null,
+                                        react_1.default.createElement(react_router_dom_1.Link, { to: "/" }, "GIPHY Studios"),
+                                        react_1.default.createElement(react_router_dom_1.Link, { to: "/" }, "Actions"),
+                                        react_1.default.createElement(react_router_dom_1.Link, { to: "/" }, "Anime"),
+                                        react_1.default.createElement(react_router_dom_1.Link, { to: "/" }, "Cartoons"),
+                                        react_1.default.createElement(react_router_dom_1.Link, { to: "/" }, "Emotions")),
+                                    react_1.default.createElement("div", null,
+                                        react_1.default.createElement(react_router_dom_1.Link, { to: "/" }, "Food/Drink"),
+                                        react_1.default.createElement(react_router_dom_1.Link, { to: "/" }, "Gaming"),
+                                        react_1.default.createElement(react_router_dom_1.Link, { to: "/" }, "Holidays/Greetings"),
+                                        react_1.default.createElement(react_router_dom_1.Link, { to: "/" }, "Memes"),
+                                        react_1.default.createElement(react_router_dom_1.Link, { to: "/" }, "Clips")))),
+                            react_1.default.createElement("div", { className: "elipsis-col" },
+                                react_1.default.createElement("h2", null, "Stickers"),
+                                react_1.default.createElement(react_router_dom_1.Link, { to: "/" }, "Originals"),
+                                react_1.default.createElement(react_router_dom_1.Link, { to: "/" }, "Trending"),
+                                react_1.default.createElement(react_router_dom_1.Link, { to: "/" }, "Reactions"),
+                                react_1.default.createElement(react_router_dom_1.Link, { to: "/" }, "Packs"),
+                                react_1.default.createElement(react_router_dom_1.Link, { to: "/" }, "Cartoons"),
+                                react_1.default.createElement(react_router_dom_1.Link, { to: "/" }, "Emotions")),
+                            react_1.default.createElement("div", { className: "elipsis-col" },
+                                react_1.default.createElement("h2", null, "Apps"),
+                                react_1.default.createElement(react_router_dom_1.Link, { to: "/" }, "GIPHY"),
+                                react_1.default.createElement(react_router_dom_1.Link, { to: "/" }, "GIPHY World"),
+                                react_1.default.createElement(react_router_dom_1.Link, { to: "/" }, "GIPHY Capture")),
+                            react_1.default.createElement("div", { className: "elipsis-col" },
+                                react_1.default.createElement("h2", null, "About"),
+                                react_1.default.createElement("div", null,
+                                    react_1.default.createElement("div", null,
+                                        react_1.default.createElement(react_router_dom_1.Link, { to: "/" }, "Team"),
+                                        react_1.default.createElement(react_router_dom_1.Link, { to: "/" }, "Engineering Blog"),
+                                        react_1.default.createElement(react_router_dom_1.Link, { to: "/" }, "GIPHY Arts"),
+                                        react_1.default.createElement(react_router_dom_1.Link, { to: "/" }, "Studios"),
+                                        react_1.default.createElement(react_router_dom_1.Link, { to: "/" }, "Developers"),
+                                        react_1.default.createElement(react_router_dom_1.Link, { to: "/" }, "Labs")),
+                                    react_1.default.createElement("div", null,
+                                        react_1.default.createElement(react_router_dom_1.Link, { to: "/" }, "FAQ"),
+                                        react_1.default.createElement(react_router_dom_1.Link, { to: "/" }, "Support"),
+                                        react_1.default.createElement(react_router_dom_1.Link, { to: "/" }, "Jobs"),
+                                        react_1.default.createElement(react_router_dom_1.Link, { to: "/" }, "DMCA"),
+                                        react_1.default.createElement(react_router_dom_1.Link, { to: "/" }, "Guidelines"))))),
+                        react_1.default.createElement("div", { className: "elipsis-lower" },
+                            react_1.default.createElement("h6", null, "\u00A9 2021 GIPHY, Inc."),
+                            react_1.default.createElement(react_router_dom_1.Link, { to: "/" }, "Terms of Service"),
+                            react_1.default.createElement(react_router_dom_1.Link, { to: "/" }, "Community Guidelines"),
+                            react_1.default.createElement(react_router_dom_1.Link, { to: "/" }, "Privacy Policy"),
+                            react_1.default.createElement(react_router_dom_1.Link, { to: "/" }, "Copyright"),
+                            react_1.default.createElement(react_router_dom_1.Link, { to: "/" }, "Manage Cookies")))),
+                react_1.default.createElement("div", { className: "creator-container" },
+                    react_1.default.createElement(react_bootstrap_1.Nav.Link, { href: "/", id: "nav-link-creator", style: { marginLeft: '1rem', marginRight: '.5rem' } }, "Upload"),
+                    react_1.default.createElement(react_bootstrap_1.Nav.Link, { href: "/", id: "nav-link-creator", style: { marginRight: '1rem' } }, "Create")),
+                react_1.default.createElement(react_bootstrap_1.Dropdown, null,
+                    react_1.default.createElement(react_bootstrap_1.Dropdown.Toggle, { variant: "success", id: "dropdown-basic" },
+                        react_1.default.createElement("img", { className: "nav-user-picture", src: imagePath + "profile.gif", alt: "Profile picture" }),
+                        react_1.default.createElement("p", null, "kasjan")),
+                    react_1.default.createElement(react_bootstrap_1.Dropdown.Menu, { id: "nav-dropdown-user" },
+                        react_1.default.createElement(react_bootstrap_1.Dropdown.Item, { href: "/" }, "Settings"),
+                        react_1.default.createElement(react_bootstrap_1.Dropdown.Item, { href: "/" }, "Favorites"),
+                        react_1.default.createElement(react_bootstrap_1.Dropdown.Item, { href: "/" }, "Log Out")))))));
+};
+exports.default = react_router_dom_1.withRouter(Navigation);
